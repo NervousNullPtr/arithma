@@ -43,7 +43,7 @@ pub enum Token {
     #[regex(r"[a-zA-Z_][a-zA-Z0-9_]*", |lex| lex.slice().to_string())]
     Identifier(String),
     /// `// Comments.`
-    #[regex(r"//[^\n\r]*", logos::skip)]
+    #[regex(r"//[^\n\r]*", logos::skip, allow_greedy = true)]
     Comment,
     /// ```
     /// // Multi line comments.

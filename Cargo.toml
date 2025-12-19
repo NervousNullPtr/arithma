@@ -4,14 +4,14 @@ description = "An easy to use, domain-specific programming language for numeric 
 keywords = ["language", "math"]
 categories = ["mathematics", "compilers"]
 license = "MIT OR Apache-2.0"
-repository = "none"
+repository = "https://github.com/nervousnullptr/arithma"
 readme = "readme.md"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
 clap = { version = "4.5.51", features = ["derive"] }
-logos = "0.15"
+logos = "0.16"
 ordered-float = "5.0"
 
 [dev-dependencies]
