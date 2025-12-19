@@ -1,0 +1,25 @@
+{
+  "name": "arithma-language-support",
+  "displayName": "arithma Language Support",
+  "description": "Adds support for the domain specific language arithma.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "arithma",
+      "aliases": ["arithma", "arithma"],
+      "extensions": [".math"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "arithma",
+      "scopeName": "source.arithma",
+      "path": "./syntaxes/arithma.tmLanguage.json"
+    }]
+  }
+}

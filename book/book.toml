@@ -1,0 +1,9 @@
+[book]
+authors = ["NervousNullPtr"]
+language = "en"
+src = "src"
+title = "arithma"
+
+[output.html]
+additional-js = ["theme/arithma.js"]
+additional-css = ["theme/arithma.css"]

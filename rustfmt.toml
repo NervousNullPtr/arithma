@@ -1,0 +1,19 @@
+unstable_features = true
+
+wrap_comments = true
+condense_wildcard_suffixes = true
+
+enum_discrim_align_threshold = 20
+struct_field_align_threshold = 20
+
+format_code_in_doc_comments = true
+
+indent_style = "Visual"
+
+match_block_trailing_comma = true
+
+imports_granularity = "Crate"
+group_imports = "StdExternalCrate"
+
+normalize_comments = true
+normalize_doc_attributes = true

@@ -1,0 +1,18 @@
+[package]
+name = "arithma"
+description = "An easy to use, domain-specific programming language for numeric mathematics."
+keywords = ["language", "math"]
+categories = ["mathematics", "compilers"]
+license = "MIT OR Apache-2.0"
+repository = "none"
+readme = "readme.md"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.51", features = ["derive"] }
+logos = "0.15"
+ordered-float = "5.0"
+
+[dev-dependencies]
+walkdir = "2"

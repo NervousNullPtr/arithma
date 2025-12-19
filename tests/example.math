@@ -1,0 +1,129 @@
+// Literal evaluation, variable assignment.
+let pi     = 3.141592653589793
+let e      = 2.718281828459045
+let radius = 5
+
+// Compound assignment.
+radius += 2
+
+// Built-in functions and type promotion.
+let area = pi * radius ^ 2
+let circ = 2 * pi * radius
+assert(area ~ 153.93804002589985) // Use approximately equal for floating point comparison.
+assert(circ ~ 43.982297150257104)
+// User-defined function (single parameter).
+circle_area(r) = pi * r ^ 2
+assert(circle_area(10) ~ pi * 100)
+
+// Unary operators, factorial & multi-factorial.
+let three_fact    = 3!
+let seven_double  = 7!!
+let negation_test = -three_fact
+let boolean_test  = !false
+assert(three_fact == 6)
+assert(seven_double == 105)
+assert(negation_test == -6)
+assert(boolean_test)
+
+// Control flow: if / else if / else.
+user_defined_max(a, b) = if a > b do { a } else do { b }
+assert(user_defined_max(42, 17) == 42)
+
+// For-loop (exclusive and inclusive ranges).
+let sum = 0
+for x in 1..5 do {
+    sum += x
+}
+assert(sum == 10)
+
+let sum_inc = 0
+for x in 1..=5 do {
+    sum_inc += x
+}
+assert(sum_inc == 15)
+
+// Nested blocks & variable shadowing avoidance.
+let outer = 100
+let result = do {
+    let inner = 20
+    outer + inner
+}
+assert(result == 120)
+
+let angle = 45
+assert(sin(radians(angle)) ~ sqrt(2) / 2)
+assert(sqrt(49) == 7)
+assert(sqrt(27, 3) == 3)
+
+// Any attempt to re-define a built-in will raise an error:
+// sin(x) = x
+
+// Absolute values.
+let neg_int = -42
+let abs_int = |neg_int|
+assert(abs_int == 42)
+
+let neg_real = -3.14
+let abs_real = |neg_real|
+assert(abs_real == 3.14)
+
+let pos = 7
+let abs_pos = |pos|
+assert(abs_pos == 7)
+
+let zero = 0
+let abs_zero = |zero|
+assert(abs_zero == 0)
+
+let array = [0, 2, 2, 2]
+print(array) // Output: [0, 2, 2, 2]
+assert(||array|| ~ 2 * sqrt(3)) // Calculate the norm of a vector.
+
+for x in array do {
+    print(x)
+}
+
+let complex = 2 + 5i
+
+assert(conj(complex) ~ 2 - 5i)
+assert(complex ^ 2 ~ -21 + 20i)
+
+assert(ln(e) ~ 1)
+
+assert(ln(complex) ~ 1.683647914993237 + 1.190289949682531i)
+
+assert(sqrt(-1) == i)
+
+assert(i^2 == -1)
+
+assert([2, 2, 2] * 2.1 == 2.1 * [2, 2, 2])
+
+print([2.0, 2.0, 2.0] * [2.1, 1.0, 1.5])
+
+print([[1, 1, 1], [2, 2, 2], [3, 3, 3]] * 2)
+
+print([[1, 1, 1], [2, 2, 2]] * [[2, 2, 2], [1, 1, 1]])
+
+print(|complex|)
+
+let set = {1, 2, 3, 4, 5}
+
+print(set & {5})
+
+assert(1 ~ 2, abs = 1.0)
+
+print(tanh(0.02i))
+
+// Matrix multiplication via @
+
+let row_times_col = [1, 2, 3] @ [[3], [2], [1]]
+
+assert(row_times_col == [10])
+
+let advanced_matrix_mul = [[1, 2, 3], [4, 5, 6]] @ [[10, 11], [20, 21], [30, 31]]
+
+assert(advanced_matrix_mul == [[140, 146], [320, 335]])
+
+let transposed = trans([1, 2])
+
+assert(transposed == [[1], [2]])
