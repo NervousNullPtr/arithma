@@ -112,7 +112,7 @@ pub mod util;
 /// let res = get_result(source, false);
 /// assert!(res.is_err());
 /// ```
-pub fn get_result(source: &str, pipe_mode: bool) -> Result<(), Box<dyn std::error::Error>> {
+pub fn get_result(source: &str, auto_print: bool) -> Result<(), Box<dyn std::error::Error>> {
     let mut context = Context::new();
 
     let mut tokens = Vec::new();
@@ -152,7 +152,7 @@ pub fn get_result(source: &str, pipe_mode: bool) -> Result<(), Box<dyn std::erro
         }
     }
 
-    if pipe_mode && let Some(v) = result {
+    if auto_print && let Some(v) = result {
         println!("{v}");
     }
 
