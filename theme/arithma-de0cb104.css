@@ -1,0 +1,26 @@
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1e1e1e;
+  color: #dcdcdc;
+}
+
+.hljs-keyword,
+.hljs-literal,
+.hljs-built_in {
+  color: #569cd6;
+}
+
+.hljs-number {
+  color: #b5cea8;
+}
+
+.hljs-string {
+  color: #ce9178;
+}
+
+.hljs-comment {
+  color: #6a9955;
+  font-style: italic;
+}
