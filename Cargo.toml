@@ -6,11 +6,11 @@ categories = ["mathematics", "compilers"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/nervousnullptr/arithma"
 readme = "readme.md"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2024"
 
 [dependencies]
-clap = { version = "4.5.51", features = ["derive"] }
+clap = { version = "4.5.54", features = ["derive"] }
 logos = "0.16"
 ordered-float = "5.0"
 

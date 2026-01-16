@@ -5,7 +5,7 @@ use crate::{
     interpreter::{
         evaluator::{
             core::{Context, EvalResult},
-            function::{builtin, clamp, conj, log, min_max, print, sqrt, transpose, trunc},
+            function::{builtin, clamp, conj, log, min_max, print, sqrt, transpose, trunc, choose},
         },
         value::core::Value,
     },
@@ -87,7 +87,8 @@ builtin_functions! {
     "ceil"    => { arity: Arity::Exact(1), func: |args, line| builtin::unary_round("ceil", args, line) },
     "round"   => { arity: Arity::Exact(1), func: |args, line| builtin::unary_round("round", args, line) },
     "print"   => { arity: Arity::Exact(1), func: print::print },
-    "trans"   => { arity: Arity::Exact(1), func: transpose::transpose }
+    "trans"   => { arity: Arity::Exact(1), func: transpose::transpose },
+    "choose"  => { arity: Arity::Exact(2), func: choose::choose },
 }
 
 impl Arity {

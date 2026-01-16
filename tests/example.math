@@ -127,3 +127,5 @@ assert(advanced_matrix_mul == [[140, 146], [320, 335]])
 let transposed = trans([1, 2])
 
 assert(transposed == [[1], [2]])
+
+assert(choose(5, 2) == 10)

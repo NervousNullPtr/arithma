@@ -31,6 +31,10 @@ pub mod sqrt;
 ///
 /// Removes the fractional part of a real number, returning its integer part.
 pub mod trunc;
+/// The `choose` function implementation.
+/// 
+/// Calculates the binomial coefficient.
+pub mod choose;
 
 pub mod core;
 
