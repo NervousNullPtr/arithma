@@ -18,3 +18,8 @@ If you'd like syntax highlighting in Visual Studio Code, install the `.vsix` fil
 For examples, look at the book under `book/` or simply open up the `tests/example.math` file.
 
 Have fun!
+
+## TODO
+
+- Implement closures.
+- Implement `sum(from, to, closure)` and `prod(from, to, closure)`.
