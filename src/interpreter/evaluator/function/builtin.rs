@@ -37,7 +37,7 @@ macro_rules! real_complex_builtin {
             check_arity(args, 1, line)?;
 
             match args[0] {
-                Value::Integer(_) => Ok(Value::Real((args[0].as_real(line)?.$real_fn().into()))),
+                Value::Integer(_) => Ok(Value::Real(args[0].as_real(line)?.$real_fn().into())),
                 Value::Real(r) => Ok(Value::Real(r.$real_fn().into())),
                 Value::Complex(c) => Ok(Value::Complex(ComplexNumber::$complex_fn(c))),
                 _ => Err(RuntimeError::ExpectedNumber { line }),

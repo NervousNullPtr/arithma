@@ -21,9 +21,9 @@ pub enum SetValue {
     /// A complex number such as `2i`.
     Complex(ComplexNumber),
     /// An array such as `[1, 2, 2]`.
-    Array(Vec<SetValue>),
+    Array(Vec<Self>),
     /// A set such as `{1, 2, true}`.
-    Set(HashSet<SetValue>),
+    Set(HashSet<Self>),
 }
 
 impl From<&Value> for SetValue {

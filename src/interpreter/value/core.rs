@@ -28,7 +28,7 @@ pub enum Value {
     /// where the condition must evaluate to `Bool`.
     Bool(bool),
     /// An array of `Value` elements.
-    Array(Rc<Vec<Value>>),
+    Array(Rc<Vec<Self>>),
     /// A complex number (with real and imaginary parts).
     Complex(ComplexNumber),
     /// A set of unique values.

@@ -84,18 +84,18 @@ pub enum Expr {
         /// The unary operator to apply.
         op:   UnaryOperator,
         /// The operand expression.
-        expr: Box<Expr>,
+        expr: Box<Self>,
         /// Line number in the source code.
         line: usize,
     },
     /// A binary operation (addition, subtraction, etc.).
     BinaryOp {
         /// Left operand.
-        left:          Box<Expr>,
+        left:          Box<Self>,
         /// The operator.
         op:            BinaryOperator,
         /// Right operand.
-        right:         Box<Expr>,
+        right:         Box<Self>,
         /// Line number in the source code.
         line:          usize,
         /// Optional relative tolerance for approximate comparisons.
@@ -108,25 +108,25 @@ pub enum Expr {
         /// Name of the function being called.
         name:      String,
         /// Arguments to the function.
-        arguments: Vec<Expr>,
+        arguments: Vec<Self>,
         /// Line number in the source code.
         line:      usize,
     },
     /// Absolute value operation.
     Abs {
         /// The operand expression.
-        expr: Box<Expr>,
+        expr: Box<Self>,
         /// Line number in the source code.
         line: usize,
     },
     /// Conditional ("if-then-else") expression.
     IfExpr {
         /// The primary condition expression.
-        condition:   Box<Expr>,
+        condition:   Box<Self>,
         /// Expression evaluated if the condition is true.
-        then_branch: Box<Expr>,
+        then_branch: Box<Self>,
         /// Expression evaluated if the condition is false.
-        else_branch: Option<Box<Expr>>,
+        else_branch: Option<Box<Self>>,
         /// Line number in the source code.
         line:        usize,
     },
@@ -147,30 +147,30 @@ pub enum Expr {
     /// Array literal expression.
     ArrayLiteral {
         /// Elements of the array.
-        elements: Vec<Expr>,
+        elements: Vec<Self>,
         /// Line number in the source code.
         line:     usize,
     },
     /// Array indexing expression (e.g., `arr[2]`).
     ArrayIndex {
         /// The array to index into.
-        array: Box<Expr>,
+        array: Box<Self>,
         /// The index to access.
-        index: Box<Expr>,
+        index: Box<Self>,
         /// Line number in the source code.
         line:  usize,
     },
     /// Norm (magnitude) operation.
     Norm {
         /// The expression whose norm is being taken.
-        expr: Box<Expr>,
+        expr: Box<Self>,
         /// Line number in the source code.
         line: usize,
     },
     /// Set literal expression.
     SetLiteral {
         /// Elements of the set.
-        elements: Vec<Expr>,
+        elements: Vec<Self>,
         /// Line number in the source code.
         line:     usize,
     },
